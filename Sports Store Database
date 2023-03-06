@@ -1,0 +1,24 @@
+--Create a sports store database 
+
+CREATE TABLE sports_store(id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, price INTEGER, aisle INTEGER);
+INSERT INTO sports_store VALUES(1,"Baseball",5,10,3);
+INSERT INTO sports_store VALUES(2,"Bats",4,15,3);
+INSERT INTO sports_store VALUES(3,"Basketball",10,12,4);
+INSERT INTO sports_store VALUES(4,"Soccerball",5,14,4);
+INSERT INTO sports_store VALUES(5,"Nets",2,5,4);
+INSERT INTO sports_store VALUES(6,"Skates",4,30,5);
+INSERT INTO sports_store VALUES(7,"Rower",4,250,1);
+INSERT INTO sports_store VALUES(8,"Stepper",5,60,1);
+INSERT INTO sports_store VALUES(9,"Jump Rope",10,5,1);
+INSERT INTO sports_store VALUES(10,"Dumbell",4,15,1);
+INSERT INTO sports_store VALUES(11,"Water Bottle",15,13,6);
+INSERT INTO sports_store VALUES(12,"Energy Drink",20,15,6);
+INSERT INTO sports_store VALUES(13,"Yoga Pants",12,25,7);
+INSERT INTO sports_store VALUES(14,"T-Shirt",15,15,7);
+INSERT INTO sports_store VALUES(15,"Baseball Glove",4,40,3);
+
+--order items in store by price
+SELECT * FROM sports_store ORDER BY price;
+
+--display total number of items in each aisle
+SELECT aisle, SUM (quantity) FROM sports_store GROUP BY aisle;
